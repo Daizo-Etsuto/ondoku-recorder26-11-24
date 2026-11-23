@@ -421,8 +421,7 @@
 
         statusMessage.innerHTML =
           `✅ 送信が完了しました！<br>` +
-          `氏名：<strong>${escapeHtml(name)}</strong> ／ 課題：<strong>${escapeHtml(taskLabel)}</strong><br>` +
-          `Googleドライブとスプレッドシートへの反映をご確認ください。`;
+          `氏名：<strong>${escapeHtml(name)}</strong> ／ 課題：<strong>${escapeHtml(taskLabel)}</strong>`;
         statusMessage.className = 'success';
         submitBtn.disabled = false;
         startBtn.disabled = false;
