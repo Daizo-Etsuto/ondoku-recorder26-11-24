@@ -17,7 +17,7 @@
     }
     .container {
       background: #fff;
-      max-width: 480px;
+      max-width: 500px;
       width: 100%;
       padding: 28px;
       border-radius: 16px;
@@ -33,7 +33,7 @@
       background: #f9fbfb;
       border: 1px solid #e1e8ed;
       border-radius: 12px;
-      padding: 20px;
+      padding: 20px 24px;
       margin-bottom: 20px;
     }
     .step-title {
@@ -105,8 +105,11 @@
       background-color: #219653;
     }
     audio {
+      display: block;
       width: 100%;
-      margin: 10px 0 16px;
+      min-width: 280px;
+      height: 44px;
+      margin: 12px 0 18px;
     }
     .form-group {
       text-align: left;
@@ -167,7 +170,7 @@
   <!-- ステップ2：録音終了後に表示されるエリア -->
   <div id="postRecordSection" class="step-box">
     <div class="step-title">② 音声を確認して提出する</div>
-    <audio id="audioPlayer" controls></audio>
+    <audio id="audioPlayer" controls controlsList="nodownload"></audio>
 
     <!-- 課題・ページ選択 -->
     <div class="form-group">
