@@ -193,12 +193,8 @@
 </div>
 
 <script>
-  // ▼ ここを、デプロイしたGoogle Apps ScriptのウェブアプリURLに書き換えてください ▼
   const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwNo5HiyU5G6fGxqh3XepwGYH4VMGMN8YVn4mNhoEhHs_3wM09lkpF1wWa0q6VpK81f/exec';
 
-  // GASから課題リストが取得できなかった場合のフォールバック選択肢
-  const FALLBACK_TASKS = [
-  // GASから課題リストが取得できなかった場合のフォールバック選択肢
   const FALLBACK_TASKS = [
     { label: 'Lesson 1（p.10）', code: 'Lesson1_P10' },
     { label: 'Lesson 1（p.12）', code: 'Lesson1_P12' },
@@ -232,7 +228,6 @@
   const studentNameInput = document.getElementById('studentName');
   const statusMessage = document.getElementById('statusMessage');
 
-  // 初期表示時にGASから課題リストを取得（失敗時はフォールバックを使用）
   window.addEventListener('DOMContentLoaded', async () => {
     if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL.includes('YOUR_DEPLOYMENT_ID')) {
       populateTaskDropdown(FALLBACK_TASKS);
@@ -351,7 +346,6 @@
     taskSelect.focus();
   });
 
-  // MP3変換とGAS doPostへの送信
   submitBtn.addEventListener('click', () => {
     if (!GAS_WEB_APP_URL || GAS_WEB_APP_URL.includes('YOUR_DEPLOYMENT_ID')) {
       alert('index.html の GAS_WEB_APP_URL を実際のウェブアプリURLに書き換えてください。');
@@ -410,7 +404,6 @@
           taskCode: taskCode
         });
 
-        // GASのdoPostにCORSブロックを回避して送信
         await fetch(GAS_WEB_APP_URL, {
           method: 'POST',
           mode: 'no-cors',
